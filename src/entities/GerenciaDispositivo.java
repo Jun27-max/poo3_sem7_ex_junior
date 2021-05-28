@@ -1,11 +1,13 @@
 package entities;
 
+
 public class GerenciaDispositivo {
 	
 	private Dispositivo[] dispositivos;
 	private int cont;
 	
 	public GerenciaDispositivo() {
+		this.aumentaEspaco();
 		dispositivos = new Dispositivo[10];
 	}
 	
@@ -26,6 +28,17 @@ public class GerenciaDispositivo {
 			.append("\n");
 		}
 		return sb.toString();
+	}
+	
+	private void aumentaEspaco() {
+		if (this.cont == this.dispositivos.length) {
+			Dispositivo[] novoArray = new Dispositivo[this.dispositivos.length * 2];
+			for (int i = 0; i < this.dispositivos.length; i++) {
+				novoArray[i] = this.dispositivos[i];
+			}
+			this.dispositivos = novoArray;
+		}
+		
 	}
 	
 	

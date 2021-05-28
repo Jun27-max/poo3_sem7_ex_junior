@@ -5,5 +5,4 @@ public interface SituacaoDispositivo {
 	boolean ligar();
 	boolean desligar();
 	
-
 }
